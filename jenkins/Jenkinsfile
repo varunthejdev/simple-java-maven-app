@@ -5,4 +5,10 @@ pipeline {
             args '-v /root/.m2:/root/.m2' #ni bondha
         }
     }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn -B -DskipTests clean package'
+            }
+        }
  
